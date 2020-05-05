@@ -95,7 +95,7 @@ function addIntern() {
             name: intern.getName(),
             email: intern.getEmail(),
             id: intern.getId(),
-            github: intern.getSchool()
+            School: intern.getSchool()
         }
         employeeList.push(obj);
         console.log(employeeList);
@@ -133,7 +133,7 @@ function addManager() {
             name: manager.getName(),
             email: manager.getEmail(),
             id: manager.getId(),
-            github: manager.getOfficeNumber()
+            OfficeNumber: manager.getOfficeNumber()
         }
         employeeList.push(obj);
         console.log(employeeList);
@@ -188,7 +188,7 @@ function exitApplication() {
                         </div>
                     </div>`
                     }else if (employeeList[i].role === "Engineer"){
-                        internHtml += `<div class="card employee-card">
+                        engineerHtml += `<div class="card employee-card">
                         <div class="card-header">
                             <h2 class="card-title">${employeeList[i].name}</h2>
                             <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${employeeList[i].role}</h3>
@@ -198,6 +198,20 @@ function exitApplication() {
                                 <li class="list-group-item">ID: ${employeeList[i].id}</li>
                                 <li class="list-group-item">Email: <a href="mailto:${employeeList[i].email}">${employeeList[i].email}</a></li>
                                 <li class="list-group-item">GitHub Username: ${employeeList[i].github}</li>
+                            </ul>
+                        </div>
+                    </div>`
+                    }else if (employeeList[i].role === "Intern"){
+                        internHtml += `<div class="card employee-card">
+                        <div class="card-header">
+                            <h2 class="card-title">${employeeList[i].name}</h2>
+                            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${employeeList[i].role}</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                <li class="list-group-item">ID: ${employeeList[i].id}</li>
+                                <li class="list-group-item">Email: <a href="mailto:${employeeList[i].email}">${employeeList[i].email}</a></li>
+                                <li class="list-group-item">School: ${employeeList[i].school}</li>
                             </ul>
                         </div>
                     </div>`
@@ -212,7 +226,7 @@ function exitApplication() {
     </body>
     
     </html>`
-    fs.writeFile("./output/index.html", html, function (err, data){
+    fs.writeFile("./templates/main.html", html, function (err, data){
         if (err)
         throw err
         console.log("Html generator");
