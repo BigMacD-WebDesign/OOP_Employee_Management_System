@@ -38,7 +38,7 @@ function addEngineer() {
         },
         {
             type: "Input",
-            name: "Id",
+            name: "id",
             message: "Enter Engineer ID"
         },
         {
@@ -75,7 +75,7 @@ function addIntern() {
         },
         {
             type: "Input",
-            name: "Id",
+            name: "id",
             message: "Enter Intern ID"
         },
         {
@@ -113,7 +113,7 @@ function addManager() {
         },
         {
             type: "Input",
-            name: "Id",
+            name: "id",
             message: "Enter Manager ID"
         },
         {
@@ -183,7 +183,7 @@ function exitApplication() {
                             <ul class="list-group">
                                 <li class="list-group-item">ID: ${employeeList[i].id}</li>
                                 <li class="list-group-item">Email: <a href="mailto:${employeeList[i].email}">${employeeList[i].email}</a></li>
-                                <li class="list-group-item">Office number: ${employeeList[i].officeNumber}</li>
+                                <li class="list-group-item">Office number: ${employeeList[i].OfficeNumber}</li>
                             </ul>
                         </div>
                     </div>`
@@ -211,7 +211,7 @@ function exitApplication() {
                             <ul class="list-group">
                                 <li class="list-group-item">ID: ${employeeList[i].id}</li>
                                 <li class="list-group-item">Email: <a href="mailto:${employeeList[i].email}">${employeeList[i].email}</a></li>
-                                <li class="list-group-item">School: ${employeeList[i].school}</li>
+                                <li class="list-group-item">School: ${employeeList[i].School}</li>
                             </ul>
                         </div>
                     </div>`
@@ -219,8 +219,7 @@ function exitApplication() {
                 }
 
                 html += managerHtml + internHtml + engineerHtml
-                html += `{{ team }}
-                </div>
+                html += `</div>
             </div>
         </div>
     </body>
